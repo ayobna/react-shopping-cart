@@ -1,0 +1,3 @@
+open server folder in terminal :
+ npm init --y 
+npm i express mongoose body-parser nodemon
