@@ -1,13 +1,24 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "../../css/Products/Products.css";
+import ProductModal from "./ProductModal";
+import Modal from 'react-modal'
 function Products(props) {
-  console.log("products", props.Products);
+  const [product, setProduct] = useState("");
+
+  const openModal = (product) => {
+      setProduct(product)
+  }
+
+  const closeModal = () => {
+      setProduct(false)
+  }
+
   return (
     <div className="products-wrapper">
       {props.Products
         ? props.Products.map((product) => (
             <div className="product-item" key={product.id}>
-              <a href="#" >
+              <a href="#"onClick={()=>openModal(product)} >
                 <img src={product.images[0].url} alt={product.title} />
               </a>
               <div className="product-desc">
@@ -18,9 +29,15 @@ function Products(props) {
                 {" "}
                 Add To Cart{" "}
               </button>
+              
             </div>
           ))
+          
+
         : "loading.."}
+       
+        <ProductModal product={product} closeModal={closeModal} />
+        
     </div>
   );
 }
