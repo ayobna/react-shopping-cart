@@ -4,20 +4,22 @@ function Filter(props) {
   return (
     <div className="filter-wrapper">
       <h2 className="filter-title"> Filter </h2>
-      <div className="num-of-products"> Number of Products </div>
+      <div className="num-of-products"> Number of Products</div>
       <div className="filter-by-size" onChange={props.handleFilterBySize}>
         <span>Filter</span>
-        <select value={props.category} className="filter-select">
+        <select defaultValue={props.category} className="filter-select">
         <option value="ALL">
             ALL
             </option>  
-          {props.Products.map((product) => (
-            <option value={product.store_category_title}>
+          {props.Products.map((product,i) => (
+            <option value={product.store_category_title} key={i}>
               {product.store_category_title}
             </option>
           ))}
         </select>
       </div>
+    
+    
       <div className="filter-by-size">
         <span>Order</span>
         <select className="filter-select">
