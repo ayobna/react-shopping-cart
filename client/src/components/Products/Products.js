@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import "../../css/Products/Products.css";
 import ProductModal from "./ProductModal";
 import Modal from 'react-modal'
+import Bounce from 'react-reveal/Bounce';
 function Products(props) {
   const [product, setProduct] = useState("");
 
@@ -14,6 +15,7 @@ function Products(props) {
   }
 
   return (
+    <Bounce left>
     <div className="products-wrapper">
       {props.Products
         ? props.Products.map((product) => (
@@ -39,6 +41,7 @@ function Products(props) {
         <ProductModal product={product} closeModal={closeModal} />
         
     </div>
+    </Bounce>
   );
 }
 export default Products;
