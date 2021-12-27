@@ -15,7 +15,7 @@ function Products(props) {
   }
 
   return (
-    <Bounce left>
+ 
     <div className="products-wrapper">
       {props.Products
         ? props.Products.map((product) => (
@@ -41,7 +41,7 @@ function Products(props) {
         <ProductModal product={product} closeModal={closeModal} />
         
     </div>
-    </Bounce>
+ 
   );
 }
 export default Products;
