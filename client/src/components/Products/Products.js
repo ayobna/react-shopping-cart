@@ -39,8 +39,7 @@ function Products(props) {
 
         : "loading.."}
        
-        <ProductModal product={product} closeModal={closeModal} />
-        
+        <ProductModal product={product} closeModal={closeModal} />        
     </div>
     </Fade>
   
